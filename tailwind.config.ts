@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom Fios/Uniq colors
+				'uniq-light': '#00AEEF',
+				'uniq-medium': '#0077C8',
+				'uniq-gray': '#F5F7FA'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +89,50 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-up': {
+					from: {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-in': {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
+				'pulse-neon': {
+					'0%, 100%': {
+						boxShadow: '0 0 5px #00AEEF, 0 0 10px #00AEEF, 0 0 15px #00AEEF'
+					},
+					'50%': {
+						boxShadow: '0 0 10px #00AEEF, 0 0 20px #00AEEF, 0 0 30px #00AEEF'
+					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'spin-slow': {
+					from: { transform: 'rotate(0deg)' },
+					to: { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-up': 'fade-up 0.6s ease-out forwards',
+				'fade-in': 'fade-in 0.6s ease-out forwards',
+				'pulse-neon': 'pulse-neon 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'spin-slow': 'spin-slow 8s linear infinite'
+			},
+			backgroundImage: {
+				'gradient-uniq': 'linear-gradient(135deg, #FFFFFF 0%, #00AEEF20 100%)',
+				'gradient-hero': 'linear-gradient(135deg, #0077C8 0%, #00AEEF 100%)'
 			}
 		}
 	},
