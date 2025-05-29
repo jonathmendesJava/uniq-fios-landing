@@ -50,45 +50,102 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="glass rounded-2xl p-8 border border-uniq-light/20 hover:border-uniq-neon/50 hover:shadow-neon transition-all duration-500 hover:-translate-y-2 animate-fade-up group relative overflow-hidden"
-              style={{animationDelay: `${index * 0.1}s`}}
-            >
-              {/* Holographic accents */}
-              <div className="absolute -top-1 -right-1 w-6 h-6 border-t-2 border-r-2 border-uniq-electric/60 rounded-tr-lg group-hover:border-uniq-neon animate-neon-pulse"></div>
-              <div className="absolute -bottom-1 -left-1 w-6 h-6 border-b-2 border-l-2 border-uniq-electric/60 rounded-bl-lg group-hover:border-uniq-neon animate-neon-pulse" style={{animationDelay: '0.5s'}}></div>
-              
-              {/* Quote icon */}
-              <div className="absolute top-4 right-4 text-6xl text-uniq-light/20 font-serif group-hover:text-uniq-neon/30 transition-colors">"</div>
-              
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-neon rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 border border-uniq-light/30 group-hover:border-uniq-neon group-hover:shadow-neon transition-all duration-300">
-                  {testimonial.avatar}
-                </div>
-                <div>
-                  <h4 className="font-bold text-white text-lg group-hover:text-uniq-neon transition-colors">{testimonial.name}</h4>
-                  <p className="text-sm text-dark-300">{testimonial.role}</p>
-                  <p className="text-sm text-uniq-light font-semibold">{testimonial.company}</p>
+        {/* Grid com depoimentos e imagem da plataforma */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Coluna dos depoimentos */}
+          <div className="space-y-6">
+            {testimonials.map((testimonial, index) => (
+              <div 
+                key={index}
+                className="glass rounded-2xl p-6 border border-uniq-light/20 hover:border-uniq-neon/50 hover:shadow-neon transition-all duration-500 animate-fade-up group relative overflow-hidden"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                {/* Holographic accents */}
+                <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-uniq-electric/60 rounded-tr-lg group-hover:border-uniq-neon"></div>
+                <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-uniq-electric/60 rounded-bl-lg group-hover:border-uniq-neon"></div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-neon rounded-full flex items-center justify-center text-white font-bold text-lg border border-uniq-light/30 group-hover:border-uniq-neon group-hover:shadow-neon transition-all duration-300 flex-shrink-0">
+                    {testimonial.avatar}
+                  </div>
+                  <div className="flex-1">
+                    <div className="mb-3">
+                      <h4 className="font-bold text-white text-lg group-hover:text-uniq-neon transition-colors">{testimonial.name}</h4>
+                      <p className="text-sm text-dark-300">{testimonial.role}</p>
+                      <p className="text-sm text-uniq-light font-semibold">{testimonial.company}</p>
+                    </div>
+                    
+                    <blockquote className="text-dark-200 leading-relaxed mb-3 group-hover:text-dark-100 transition-colors">
+                      "{testimonial.content}"
+                    </blockquote>
+                    
+                    <div className="flex text-uniq-neon">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <span key={i} className="text-lg mr-1">★</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Coluna da imagem da plataforma */}
+          <div className="lg:sticky lg:top-8">
+            <div className="glass rounded-2xl p-8 border border-uniq-light/20 hover:border-uniq-neon/50 transition-all duration-500 animate-fade-up group relative overflow-hidden" style={{animationDelay: '0.3s'}}>
+              {/* Holographic accents */}
+              <div className="absolute -top-1 -right-1 w-6 h-6 border-t-2 border-r-2 border-uniq-electric/60 rounded-tr-lg group-hover:border-uniq-neon"></div>
+              <div className="absolute -bottom-1 -left-1 w-6 h-6 border-b-2 border-l-2 border-uniq-electric/60 rounded-bl-lg group-hover:border-uniq-neon"></div>
               
-              <blockquote className="text-dark-200 italic leading-relaxed mb-6 group-hover:text-dark-100 transition-colors relative z-10">
-                "{testimonial.content}"
-              </blockquote>
-              
-              <div className="flex text-uniq-neon mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-lg mr-1 animate-glow" style={{animationDelay: `${i * 0.1}s`}}>★</span>
-                ))}
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-uniq-neon transition-colors">
+                  Nossa <span className="text-gradient-neon">Plataforma</span>
+                </h3>
+                <p className="text-dark-200">
+                  Veja como é fácil e intuitivo usar nossa solução
+                </p>
               </div>
 
-              {/* Scanning line */}
-              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-uniq-neon to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Área para a imagem da plataforma */}
+              <div className="relative rounded-xl overflow-hidden border border-uniq-light/30 group-hover:border-uniq-neon/50 transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-600 flex items-center justify-center">
+                  {/* Placeholder para a imagem - você pode substituir por uma tag img */}
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-neon rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <p className="text-dark-300 text-sm">
+                      Adicione aqui o print da plataforma
+                    </p>
+                    <p className="text-uniq-light text-xs mt-1">
+                      Recomendado: 800x600px
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Overlay com efeito cyber */}
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+
+              {/* Features da plataforma */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center text-sm">
+                  <div className="w-2 h-2 bg-uniq-neon rounded-full mr-3 animate-glow"></div>
+                  <span className="text-dark-200">Interface intuitiva e moderna</span>
+                </div>
+                <div className="flex items-center text-sm">
+                  <div className="w-2 h-2 bg-uniq-electric rounded-full mr-3 animate-glow" style={{animationDelay: '0.5s'}}></div>
+                  <span className="text-dark-200">Dashboard completo em tempo real</span>
+                </div>
+                <div className="flex items-center text-sm">
+                  <div className="w-2 h-2 bg-neon-green rounded-full mr-3 animate-glow" style={{animationDelay: '1s'}}></div>
+                  <span className="text-dark-200">Integração fácil com seu sistema</span>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Trust indicators */}
