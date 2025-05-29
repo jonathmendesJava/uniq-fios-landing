@@ -9,14 +9,10 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen bg-gradient-hero-dark relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Simplified background elements - much lighter */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-uniq-neon/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-uniq-electric/20 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-uniq-glow/30 rounded-full blur-2xl animate-neon-pulse"></div>
-        
-        {/* Cyber grid overlay */}
-        <div className="absolute inset-0 cyber-grid opacity-20"></div>
+        <div className="absolute top-20 left-20 w-48 h-48 bg-uniq-neon/5 rounded-full blur-2xl animate-float-slow"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-uniq-electric/8 rounded-full blur-2xl animate-float-slow"></div>
       </div>
 
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
@@ -29,7 +25,7 @@ const HeroSection = () => {
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 Transforme seu atendimento com a plataforma 
-                <span className="text-gradient-neon animate-glow"> Uniq</span>
+                <span className="text-gradient-neon"> Uniq</span>
               </h1>
             </div>
             
@@ -43,84 +39,76 @@ const HeroSection = () => {
               <Button 
                 onClick={handleContactSpecialist}
                 size="lg"
-                className="btn-neon text-white text-lg px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-neon group"
+                className="btn-neon text-white text-lg px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 group"
               >
-                <Phone className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                <Phone className="w-5 h-5 mr-2" />
                 <span className="relative z-10">Falar com especialista</span>
               </Button>
               
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-uniq-light/30 text-uniq-neon hover:bg-uniq-light/10 hover:border-uniq-neon text-lg px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-cyber"
+                className="border-uniq-light/30 text-uniq-neon hover:bg-uniq-light/10 hover:border-uniq-neon text-lg px-8 py-4 rounded-xl transition-all duration-300"
               >
                 <Zap className="w-5 h-5 mr-2" />
                 Ver demonstração
               </Button>
             </div>
 
-            {/* Stats */}
+            {/* Simplified stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
-              <div className="text-center group">
-                <div className="text-3xl font-bold text-uniq-neon animate-glow">300%</div>
-                <div className="text-dark-300 text-sm group-hover:text-uniq-light transition-colors">Eficiência</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-uniq-neon">300%</div>
+                <div className="text-dark-300 text-sm">Eficiência</div>
               </div>
-              <div className="text-center group">
-                <div className="text-3xl font-bold text-uniq-neon animate-glow">24/7</div>
-                <div className="text-dark-300 text-sm group-hover:text-uniq-light transition-colors">Suporte</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-uniq-neon">24/7</div>
+                <div className="text-dark-300 text-sm">Suporte</div>
               </div>
-              <div className="text-center group">
-                <div className="text-3xl font-bold text-uniq-neon animate-glow">15 dias</div>
-                <div className="text-dark-300 text-sm group-hover:text-uniq-light transition-colors">Setup</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-uniq-neon">15 dias</div>
+                <div className="text-dark-300 text-sm">Setup</div>
               </div>
             </div>
           </div>
 
           <div className="relative animate-fade-up" style={{animationDelay: '0.3s'}}>
-            <div className="relative glass rounded-3xl p-8 border border-uniq-light/30 hover:border-uniq-neon/50 transition-all duration-500 group">
-              {/* Floating tech icons */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-neon-green rounded-full flex items-center justify-center animate-neon-pulse">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-              </div>
-              
+            <div className="relative glass rounded-3xl p-8 border border-uniq-light/30 hover:border-uniq-neon/50 transition-all duration-300 group">              
               <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="glass-hover rounded-2xl p-4 text-center group-hover:border-uniq-neon/40 transition-all duration-300">
-                  <Phone className="w-8 h-8 text-uniq-neon mx-auto mb-2 animate-float" />
+                <div className="glass-hover rounded-2xl p-4 text-center transition-all duration-300">
+                  <Phone className="w-8 h-8 text-uniq-neon mx-auto mb-2" />
                   <span className="text-white text-sm font-medium">Telefone</span>
                 </div>
-                <div className="glass-hover rounded-2xl p-4 text-center group-hover:border-uniq-neon/40 transition-all duration-300">
-                  <MessageCircle className="w-8 h-8 text-uniq-electric mx-auto mb-2 animate-neon-pulse" />
+                <div className="glass-hover rounded-2xl p-4 text-center transition-all duration-300">
+                  <MessageCircle className="w-8 h-8 text-uniq-electric mx-auto mb-2" />
                   <span className="text-white text-sm font-medium">WhatsApp</span>
                 </div>
-                <div className="glass-hover rounded-2xl p-4 text-center group-hover:border-uniq-neon/40 transition-all duration-300">
-                  <Users className="w-8 h-8 text-uniq-glow mx-auto mb-2 animate-float" style={{animationDelay: '0.5s'}} />
+                <div className="glass-hover rounded-2xl p-4 text-center transition-all duration-300">
+                  <Users className="w-8 h-8 text-uniq-glow mx-auto mb-2" />
                   <span className="text-white text-sm font-medium">Equipe</span>
                 </div>
               </div>
               
               <div className="space-y-4">
-                <div className="glass rounded-lg p-4 backdrop-blur-sm border border-uniq-light/20 hover:border-neon-green/50 transition-all duration-300">
+                <div className="glass rounded-lg p-4 border border-uniq-light/20 transition-all duration-300">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-neon-green rounded-full animate-neon-pulse"></div>
+                    <div className="w-3 h-3 bg-neon-green rounded-full"></div>
                     <span className="text-white text-sm font-medium">Cliente conectado via WhatsApp</span>
                   </div>
                 </div>
-                <div className="glass rounded-lg p-4 backdrop-blur-sm border border-uniq-light/20 hover:border-uniq-electric/50 transition-all duration-300">
+                <div className="glass rounded-lg p-4 border border-uniq-light/20 transition-all duration-300">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-uniq-electric rounded-full animate-neon-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="w-3 h-3 bg-uniq-electric rounded-full"></div>
                     <span className="text-white text-sm font-medium">Atendimento distribuído automaticamente</span>
                   </div>
                 </div>
-                <div className="glass rounded-lg p-4 backdrop-blur-sm border border-uniq-light/20 hover:border-neon-purple/50 transition-all duration-300">
+                <div className="glass rounded-lg p-4 border border-uniq-light/20 transition-all duration-300">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-neon-purple rounded-full animate-neon-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="w-3 h-3 bg-neon-purple rounded-full"></div>
                     <span className="text-white text-sm font-medium">Relatório em tempo real</span>
                   </div>
                 </div>
               </div>
-
-              {/* Holographic effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-uniq-neon/5 via-transparent to-uniq-electric/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </div>
           </div>
         </div>

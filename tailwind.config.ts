@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,7 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Enhanced Dark Theme Colors
+				// Optimized Dark Theme Colors
 				'dark': {
 					'900': '#0A0A0B',
 					'800': '#1A1A1B',
@@ -75,27 +76,22 @@ export default {
 					'100': '#CACACA',
 					'50': '#EAEAEA'
 				},
-				// Softened Uniq colors - menos intensas
+				// Optimized Uniq colors
 				'uniq': {
 					'light': '#4A9EFF',
 					'medium': '#2E7FDB',
 					'dark': '#1B5FA8',
-					'neon': '#5BA3FF', // Era #00FFFF, agora mais suave
-					'electric': '#6BB2FF', // Era #00D4FF, agora mais suave
-					'glow': '#7AC1FF' // Era #33C1FF, agora mais suave
+					'neon': '#5BA3FF',
+					'electric': '#6BB2FF',
+					'glow': '#7AC1FF'
 				},
 				'neon': {
-					'blue': '#4A9EFF', // Suavizado
-					'cyan': '#5BA3FF', // Suavizado
-					'electric': '#6BB2FF', // Suavizado
+					'blue': '#4A9EFF',
+					'cyan': '#5BA3FF',
+					'electric': '#6BB2FF',
 					'purple': '#8B5CF6',
 					'pink': '#EC4899',
 					'green': '#10B981'
-				},
-				'cyber': {
-					'grid': 'rgba(74, 158, 255, 0.05)', // Reduzido de 0.1 para 0.05
-					'glow': 'rgba(91, 163, 255, 0.3)', // Reduzido de 0.5 para 0.3
-					'shadow': 'rgba(74, 158, 255, 0.15)' // Reduzido de 0.3 para 0.15
 				}
 			},
 			borderRadius: {
@@ -120,10 +116,11 @@ export default {
 						height: '0'
 					}
 				},
+				// SIMPLIFIED keyframes for better performance
 				'fade-up': {
 					from: {
 						opacity: '0',
-						transform: 'translateY(50px)'
+						transform: 'translateY(30px)'
 					},
 					to: {
 						opacity: '1',
@@ -136,96 +133,54 @@ export default {
 				},
 				'neon-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 3px #4A9EFF, 0 0 6px #4A9EFF, 0 0 9px #4A9EFF'
+						transform: 'scale(1)',
+						opacity: '0.8'
 					},
 					'50%': {
-						boxShadow: '0 0 6px #5BA3FF, 0 0 12px #5BA3FF, 0 0 18px #4A9EFF'
+						transform: 'scale(1.05)',
+						opacity: '1'
 					}
 				},
 				'glow': {
 					'0%': {
-						textShadow: '0 0 6px rgba(74, 158, 255, 0.4), 0 0 12px rgba(74, 158, 255, 0.3)'
+						filter: 'brightness(1)'
 					},
 					'100%': {
-						textShadow: '0 0 12px rgba(91, 163, 255, 0.6), 0 0 18px rgba(74, 158, 255, 0.4), 0 0 24px rgba(74, 158, 255, 0.3)'
+						filter: 'brightness(1.1)'
 					}
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
-				'float-slow': {
-					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-					'50%': { transform: 'translateY(-20px) rotate(5deg)' }
-				},
-				'spin-slow': {
-					from: { transform: 'rotate(0deg)' },
-					to: { transform: 'rotate(360deg)' }
-				},
-				'scan-line': {
-					'0%': { transform: 'translateX(-100%)' },
-					'100%': { transform: 'translateX(100vw)' }
-				},
-				'cyber-glitch': {
-					'0%, 100%': { transform: 'translate(0)' },
-					'20%': { transform: 'translate(-2px, 2px)' },
-					'40%': { transform: 'translate(-2px, -2px)' },
-					'60%': { transform: 'translate(2px, 2px)' },
-					'80%': { transform: 'translate(2px, -2px)' }
-				},
-				// Novas animações para ícones do formulário
-				'icon-bounce': {
-					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-8px)' }
 				},
-				'icon-shake': {
-					'0%, 100%': { transform: 'translateX(0)' },
-					'25%': { transform: 'translateX(-4px)' },
-					'75%': { transform: 'translateX(4px)' }
-				},
-				'icon-glow': {
-					'0%, 100%': { 
-						filter: 'drop-shadow(0 0 4px rgba(74, 158, 255, 0.4))',
-						transform: 'scale(1)'
-					},
-					'50%': { 
-						filter: 'drop-shadow(0 0 8px rgba(91, 163, 255, 0.6))',
-						transform: 'scale(1.1)'
-					}
+				'float-slow': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-up': 'fade-up 0.8s ease-out forwards',
-				'fade-in': 'fade-in 0.6s ease-out forwards',
+				'fade-up': 'fade-up 0.6s ease-out forwards',
+				'fade-in': 'fade-in 0.4s ease-out forwards',
 				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
-				'glow': 'glow 3s ease-in-out infinite alternate',
+				'glow': 'glow 2s ease-in-out infinite alternate',
 				'float': 'float 3s ease-in-out infinite',
-				'float-slow': 'float-slow 6s ease-in-out infinite',
-				'spin-slow': 'spin-slow 8s linear infinite',
-				'scan-line': 'scan-line 3s linear infinite',
-				'cyber-glitch': 'cyber-glitch 0.3s ease-in-out infinite',
-				// Novas animações para ícones
-				'icon-bounce': 'icon-bounce 0.6s ease-in-out',
-				'icon-shake': 'icon-shake 0.5s ease-in-out',
-				'icon-glow': 'icon-glow 2s ease-in-out infinite'
+				'float-slow': 'float-slow 4s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'gradient-dark': 'linear-gradient(135deg, #0A0A0B 0%, #1A1A1B 100%)',
-				'gradient-cyber': 'linear-gradient(135deg, #0A0A0B 0%, #1A1A1B 50%, #2A2A2B 100%)',
 				'gradient-neon': 'linear-gradient(135deg, #5BA3FF 0%, #4A9EFF 50%, #2E7FDB 100%)',
-				'gradient-hero-dark': 'linear-gradient(135deg, #0A0A0B 0%, #2E7FDB 50%, #4A9EFF 100%)',
-				'gradient-glass': 'linear-gradient(135deg, rgba(26, 26, 27, 0.3) 0%, rgba(42, 42, 43, 0.2) 100%)'
+				'gradient-hero-dark': 'linear-gradient(135deg, #0A0A0B 0%, #2E7FDB 50%, #4A9EFF 100%)'
 			},
 			fontFamily: {
 				'cyber': ['Inter', 'system-ui', 'sans-serif']
 			},
 			boxShadow: {
-				'neon': '0 0 12px rgba(74, 158, 255, 0.4), 0 0 24px rgba(74, 158, 255, 0.2)',
-				'neon-strong': '0 0 18px rgba(91, 163, 255, 0.6), 0 0 36px rgba(74, 158, 255, 0.3)',
-				'cyber': '0 8px 32px rgba(74, 158, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-				'glass': '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 16px rgba(74, 158, 255, 0.05)'
+				'neon': '0 0 8px rgba(74, 158, 255, 0.3)',
+				'neon-strong': '0 0 12px rgba(91, 163, 255, 0.4)',
+				'cyber': '0 4px 16px rgba(74, 158, 255, 0.1)',
+				'glass': '0 4px 16px rgba(0, 0, 0, 0.2)'
 			}
 		}
 	},

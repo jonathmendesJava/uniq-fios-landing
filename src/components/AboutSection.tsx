@@ -4,10 +4,9 @@ import ContactForm from "./ContactForm";
 const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 bg-dark-800 relative overflow-hidden">
-      {/* Background effects */}
+      {/* Simplified background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-uniq-electric/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div className="cyber-grid absolute inset-0 opacity-10"></div>
+        <div className="absolute top-10 right-10 w-48 h-48 bg-uniq-electric/5 rounded-full blur-2xl animate-float-slow"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -17,7 +16,7 @@ const AboutSection = () => {
               <span className="text-uniq-neon text-sm font-medium uppercase tracking-wider">SOBRE A PLATAFORMA</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-glow">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               O que é a <span className="text-gradient-neon">Uniq</span>?
             </h2>
             <p className="text-lg md:text-xl text-dark-200 leading-relaxed max-w-4xl mx-auto">
@@ -30,14 +29,14 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start animate-fade-up" style={{animationDelay: '0.2s'}}>
             {/* Informações sobre a Fios */}
             <div className="space-y-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-white text-glow">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Por que a <span className="text-uniq-neon">Fios</span> é a escolha ideal?
               </h3>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 group">
-                  <div className="w-8 h-8 bg-gradient-neon rounded-full flex-shrink-0 mt-1 border border-uniq-light/30 group-hover:border-uniq-neon group-hover:shadow-neon transition-all duration-300">
-                    <div className="w-full h-full rounded-full bg-uniq-neon/20 animate-neon-pulse"></div>
+                  <div className="w-8 h-8 bg-gradient-neon rounded-full flex-shrink-0 mt-1 border border-uniq-light/30 group-hover:border-uniq-neon transition-all duration-300">
+                    <div className="w-full h-full rounded-full bg-uniq-neon/20"></div>
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-lg mb-2 group-hover:text-uniq-neon transition-colors">Configuração Especializada</h4>
@@ -46,8 +45,8 @@ const AboutSection = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4 group">
-                  <div className="w-8 h-8 bg-gradient-neon rounded-full flex-shrink-0 mt-1 border border-uniq-light/30 group-hover:border-uniq-neon group-hover:shadow-neon transition-all duration-300">
-                    <div className="w-full h-full rounded-full bg-uniq-electric/20 animate-neon-pulse" style={{animationDelay: '0.5s'}}></div>
+                  <div className="w-8 h-8 bg-gradient-neon rounded-full flex-shrink-0 mt-1 border border-uniq-light/30 group-hover:border-uniq-neon transition-all duration-300">
+                    <div className="w-full h-full rounded-full bg-uniq-electric/20"></div>
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-lg mb-2 group-hover:text-uniq-neon transition-colors">Implantação Completa</h4>
@@ -56,8 +55,8 @@ const AboutSection = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4 group">
-                  <div className="w-8 h-8 bg-gradient-neon rounded-full flex-shrink-0 mt-1 border border-uniq-light/30 group-hover:border-uniq-neon group-hover:shadow-neon transition-all duration-300">
-                    <div className="w-full h-full rounded-full bg-uniq-glow/20 animate-neon-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="w-8 h-8 bg-gradient-neon rounded-full flex-shrink-0 mt-1 border border-uniq-light/30 group-hover:border-uniq-neon transition-all duration-300">
+                    <div className="w-full h-full rounded-full bg-uniq-glow/20"></div>
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-lg mb-2 group-hover:text-uniq-neon transition-colors">Suporte Contínuo</h4>
@@ -65,22 +64,22 @@ const AboutSection = () => {
                   </div>
                 </div>
 
-                {/* Estatísticas em mobile - mostrar como cards menores */}
+                {/* Simplified mobile stats */}
                 <div className="grid grid-cols-2 gap-4 lg:hidden mt-8">
                   <div className="glass-hover rounded-xl p-4 text-center border border-uniq-light/20">
-                    <div className="text-2xl font-bold text-uniq-neon animate-glow mb-1">95%</div>
+                    <div className="text-2xl font-bold text-uniq-neon mb-1">95%</div>
                     <div className="text-dark-300 text-sm">Satisfação</div>
                   </div>
                   <div className="glass-hover rounded-xl p-4 text-center border border-uniq-light/20">
-                    <div className="text-2xl font-bold text-uniq-electric animate-glow mb-1">24h</div>
+                    <div className="text-2xl font-bold text-uniq-electric mb-1">24h</div>
                     <div className="text-dark-300 text-sm">Suporte</div>
                   </div>
                   <div className="glass-hover rounded-xl p-4 text-center border border-uniq-light/20">
-                    <div className="text-2xl font-bold text-uniq-glow animate-glow mb-1">100+</div>
+                    <div className="text-2xl font-bold text-uniq-glow mb-1">100+</div>
                     <div className="text-dark-300 text-sm">Clientes</div>
                   </div>
                   <div className="glass-hover rounded-xl p-4 text-center border border-uniq-light/20">
-                    <div className="text-2xl font-bold text-neon-green animate-glow mb-1">15 dias</div>
+                    <div className="text-2xl font-bold text-neon-green mb-1">15 dias</div>
                     <div className="text-dark-300 text-sm">Implementação</div>
                   </div>
                 </div>
