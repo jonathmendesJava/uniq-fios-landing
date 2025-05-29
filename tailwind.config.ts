@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -76,27 +75,27 @@ export default {
 					'100': '#CACACA',
 					'50': '#EAEAEA'
 				},
-				// Enhanced Uniq colors with neon variants
+				// Softened Uniq colors - menos intensas
 				'uniq': {
-					'light': '#00AEEF',
-					'medium': '#0077C8',
-					'dark': '#004C7F',
-					'neon': '#00FFFF',
-					'electric': '#00D4FF',
-					'glow': '#33C1FF'
+					'light': '#4A9EFF',
+					'medium': '#2E7FDB',
+					'dark': '#1B5FA8',
+					'neon': '#5BA3FF', // Era #00FFFF, agora mais suave
+					'electric': '#6BB2FF', // Era #00D4FF, agora mais suave
+					'glow': '#7AC1FF' // Era #33C1FF, agora mais suave
 				},
 				'neon': {
-					'blue': '#00AEEF',
-					'cyan': '#00FFFF',
-					'electric': '#00D4FF',
+					'blue': '#4A9EFF', // Suavizado
+					'cyan': '#5BA3FF', // Suavizado
+					'electric': '#6BB2FF', // Suavizado
 					'purple': '#8B5CF6',
 					'pink': '#EC4899',
 					'green': '#10B981'
 				},
 				'cyber': {
-					'grid': 'rgba(0, 174, 239, 0.1)',
-					'glow': 'rgba(0, 255, 255, 0.5)',
-					'shadow': 'rgba(0, 174, 239, 0.3)'
+					'grid': 'rgba(74, 158, 255, 0.05)', // Reduzido de 0.1 para 0.05
+					'glow': 'rgba(91, 163, 255, 0.3)', // Reduzido de 0.5 para 0.3
+					'shadow': 'rgba(74, 158, 255, 0.15)' // Reduzido de 0.3 para 0.15
 				}
 			},
 			borderRadius: {
@@ -137,18 +136,18 @@ export default {
 				},
 				'neon-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px #00AEEF, 0 0 10px #00AEEF, 0 0 15px #00AEEF'
+						boxShadow: '0 0 3px #4A9EFF, 0 0 6px #4A9EFF, 0 0 9px #4A9EFF'
 					},
 					'50%': {
-						boxShadow: '0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00AEEF'
+						boxShadow: '0 0 6px #5BA3FF, 0 0 12px #5BA3FF, 0 0 18px #4A9EFF'
 					}
 				},
 				'glow': {
 					'0%': {
-						textShadow: '0 0 10px rgba(0, 174, 239, 0.8), 0 0 20px rgba(0, 174, 239, 0.6)'
+						textShadow: '0 0 6px rgba(74, 158, 255, 0.4), 0 0 12px rgba(74, 158, 255, 0.3)'
 					},
 					'100%': {
-						textShadow: '0 0 20px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 174, 239, 0.8), 0 0 40px rgba(0, 174, 239, 0.6)'
+						textShadow: '0 0 12px rgba(91, 163, 255, 0.6), 0 0 18px rgba(74, 158, 255, 0.4), 0 0 24px rgba(74, 158, 255, 0.3)'
 					}
 				},
 				'float': {
@@ -173,6 +172,26 @@ export default {
 					'40%': { transform: 'translate(-2px, -2px)' },
 					'60%': { transform: 'translate(2px, 2px)' },
 					'80%': { transform: 'translate(2px, -2px)' }
+				},
+				// Novas animações para ícones do formulário
+				'icon-bounce': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-8px)' }
+				},
+				'icon-shake': {
+					'0%, 100%': { transform: 'translateX(0)' },
+					'25%': { transform: 'translateX(-4px)' },
+					'75%': { transform: 'translateX(4px)' }
+				},
+				'icon-glow': {
+					'0%, 100%': { 
+						filter: 'drop-shadow(0 0 4px rgba(74, 158, 255, 0.4))',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						filter: 'drop-shadow(0 0 8px rgba(91, 163, 255, 0.6))',
+						transform: 'scale(1.1)'
+					}
 				}
 			},
 			animation: {
@@ -186,23 +205,27 @@ export default {
 				'float-slow': 'float-slow 6s ease-in-out infinite',
 				'spin-slow': 'spin-slow 8s linear infinite',
 				'scan-line': 'scan-line 3s linear infinite',
-				'cyber-glitch': 'cyber-glitch 0.3s ease-in-out infinite'
+				'cyber-glitch': 'cyber-glitch 0.3s ease-in-out infinite',
+				// Novas animações para ícones
+				'icon-bounce': 'icon-bounce 0.6s ease-in-out',
+				'icon-shake': 'icon-shake 0.5s ease-in-out',
+				'icon-glow': 'icon-glow 2s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'gradient-dark': 'linear-gradient(135deg, #0A0A0B 0%, #1A1A1B 100%)',
 				'gradient-cyber': 'linear-gradient(135deg, #0A0A0B 0%, #1A1A1B 50%, #2A2A2B 100%)',
-				'gradient-neon': 'linear-gradient(135deg, #00FFFF 0%, #00AEEF 50%, #0077C8 100%)',
-				'gradient-hero-dark': 'linear-gradient(135deg, #0A0A0B 0%, #0077C8 50%, #00AEEF 100%)',
+				'gradient-neon': 'linear-gradient(135deg, #5BA3FF 0%, #4A9EFF 50%, #2E7FDB 100%)',
+				'gradient-hero-dark': 'linear-gradient(135deg, #0A0A0B 0%, #2E7FDB 50%, #4A9EFF 100%)',
 				'gradient-glass': 'linear-gradient(135deg, rgba(26, 26, 27, 0.3) 0%, rgba(42, 42, 43, 0.2) 100%)'
 			},
 			fontFamily: {
 				'cyber': ['Inter', 'system-ui', 'sans-serif']
 			},
 			boxShadow: {
-				'neon': '0 0 20px rgba(0, 174, 239, 0.8), 0 0 40px rgba(0, 174, 239, 0.4)',
-				'neon-strong': '0 0 30px rgba(0, 255, 255, 1), 0 0 60px rgba(0, 174, 239, 0.6)',
-				'cyber': '0 8px 32px rgba(0, 174, 239, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-				'glass': '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 16px rgba(0, 174, 239, 0.1)'
+				'neon': '0 0 12px rgba(74, 158, 255, 0.4), 0 0 24px rgba(74, 158, 255, 0.2)',
+				'neon-strong': '0 0 18px rgba(91, 163, 255, 0.6), 0 0 36px rgba(74, 158, 255, 0.3)',
+				'cyber': '0 8px 32px rgba(74, 158, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+				'glass': '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 16px rgba(74, 158, 255, 0.05)'
 			}
 		}
 	},
